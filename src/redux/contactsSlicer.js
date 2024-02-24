@@ -32,13 +32,13 @@ const contactsSlice = createSlice({
   initialState: [],
   reducers: {
     addContacts: (state, action) => {
-      return [...state, action.payload];
+      // Ensure action.payload is an array before concatenating
+      const newContacts = Array.isArray(action.payload) ? action.payload : [action.payload];
+      return [...state, ...newContacts];
     },
     prepare(contacts) {
       return {
-        payload: {
-          contacts,
-        },
+        payload: contacts,
       };
     },
     deleteContacts: (state, action) => {
