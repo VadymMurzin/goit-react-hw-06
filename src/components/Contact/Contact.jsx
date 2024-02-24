@@ -2,7 +2,7 @@
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { IoMdPerson } from "react-icons/io";
 import { useDispatch } from 'react-redux';
-import { deleteContact } from '../../redux/contactsSlicer';
+import { deleteContacts } from '../../redux/contactsSlicer';  // Use deleteContacts instead of deleteContact
 import css from './contact.module.css';
 
 export default function Contact ({ contact }) {
@@ -10,7 +10,7 @@ export default function Contact ({ contact }) {
   const { id, name, number } = contact;
 
   const handleDeleteClick = () => {
-    dispatch(deleteContact(id));
+    dispatch(deleteContacts(id));  // Use deleteContacts instead of deleteContact
   };
 
   return (
@@ -21,3 +21,4 @@ export default function Contact ({ contact }) {
     </li>
   );
 }
+
