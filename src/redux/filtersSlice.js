@@ -1,14 +1,25 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+// const filterSlice = createSlice({
+//   name: 'filters',
+//   initialState: '',
+//   reducers: {
+//     filterFiltration: (state, action) => {
+//       return state, action.payload;
+//     },
+//   },
+// });
+
+
 const filterSlice = createSlice({
   name: 'filters',
-  initialState: '',
+  initialState: { text: '' }, // Використовуйте об'єкт із властивістю text
   reducers: {
-    addContacts: (state, action) => {
-      return [...state, ...action.payload];
-    },
     filterFiltration: (state, action) => {
-      return state, action.payload;
+      // state.text = action.payload; // Оновлюйте властивість text
+      // return { text: action.payload };
+      return { ...state, text: action.payload };
+      // return Object.assign({}, state, { text: action.payload });
     },
   },
 });

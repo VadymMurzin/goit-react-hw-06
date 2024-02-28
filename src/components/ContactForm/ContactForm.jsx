@@ -29,6 +29,7 @@ export default function ContactForm() {
       id: nanoid(),
       ...values,
     };
+    console.log('New Contact:', newContact);
     dispatch(addContacts([newContact]));
     resetForm();
   };
